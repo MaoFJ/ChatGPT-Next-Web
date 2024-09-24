@@ -589,8 +589,7 @@ export const useChatStore = createPersistStore(
         // 关闭自动生成标题的话使用第一个提问的问题的前几个字当标题
         if (
           !config.enableAutoGenerateTitle &&
-          session.topic === DEFAULT_TOPIC &&
-          countMessages(messages) >= SUMMARIZE_MIN_LEN
+          session.topic === DEFAULT_TOPIC
         ) {
           const startIndex = Math.max(
             0,
