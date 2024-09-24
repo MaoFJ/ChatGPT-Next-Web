@@ -586,6 +586,24 @@ export const useChatStore = createPersistStore(
 
         // should summarize topic after chating more than 50 words
         const SUMMARIZE_MIN_LEN = 50;
+        // 关闭自动生成标题的话使用第一个提问的问题的前几个字当标题
+        if (
+          !config.enableAutoGenerateTitle &&
+          session.topic === DEFAULT_TOPIC &&
+          countMessages(messages) >= SUMMARIZE_MIN_LEN
+        ) {
+          const startIndex = Math.max(
+            0,
+            messages.length - modelConfig.historyMessageCount,
+          );
+          const topicMessages = messages.slice(
+            startIndex < messages.length ? startIndex : messages.length - 1,
+            messages.length,
+          );
+          session.topic = trimTopic(
+            getMessageTextContent(topicMessages[0]),
+          ).slice(0, 20);
+        }
         if (
           (config.enableAutoGenerateTitle &&
             session.topic === DEFAULT_TOPIC &&
