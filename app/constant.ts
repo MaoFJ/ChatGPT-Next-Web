@@ -305,6 +305,7 @@ const googleModels: string[] = [
   // "gemini-1.5-pro-latest",
   // "gemini-1.5-flash-latest",
   // "gemini-pro-vision",
+  "gemini-1.5-pro-002",
 ];
 
 const anthropicModels: string[] = [
