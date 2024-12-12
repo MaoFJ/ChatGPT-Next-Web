@@ -258,23 +258,23 @@ export const GEMINI_SUMMARIZE_MODEL = "gemini-pro";
 
 export const KnowledgeCutOffDate: Record<string, string> = {
   default: "2021-09",
-  "gpt-4-turbo": "2023-12",
-  "gpt-4-turbo-2024-04-09": "2023-12",
-  "gpt-4-turbo-preview": "2023-12",
-  "gpt-4o": "2023-10",
-  "gpt-4o-2024-05-13": "2023-10",
-  "gpt-4o-2024-08-06": "2023-10",
-  "gpt-4o-2024-11-20": "2023-10",
-  "chatgpt-4o-latest": "2023-10",
-  "gpt-4o-mini": "2023-10",
-  "gpt-4o-mini-2024-07-18": "2023-10",
-  "gpt-4-vision-preview": "2023-04",
-  "o1-mini": "2023-10",
-  "o1-preview": "2023-10",
-  // After improvements,
-  // it's now easier to add "KnowledgeCutOffDate" instead of stupid hardcoding it, as was done previously.
-  "gemini-pro": "2023-12",
-  "gemini-pro-vision": "2023-12",
+  // "gpt-4-turbo": "2023-12",
+  // "gpt-4-turbo-2024-04-09": "2023-12",
+  // "gpt-4-turbo-preview": "2023-12",
+  // "gpt-4o": "2023-10",
+  // "gpt-4o-2024-05-13": "2023-10",
+  // "gpt-4o-2024-08-06": "2023-10",
+  // "gpt-4o-2024-11-20": "2023-10",
+  // "chatgpt-4o-latest": "2023-10",
+  // "gpt-4o-mini": "2023-10",
+  // "gpt-4o-mini-2024-07-18": "2023-10",
+  // "gpt-4-vision-preview": "2023-04",
+  // "o1-mini": "2023-10",
+  // "o1-preview": "2023-10",
+  // // After improvements,
+  // // it's now easier to add "KnowledgeCutOffDate" instead of stupid hardcoding it, as was done previously.
+  // "gemini-pro": "2023-12",
+  // "gemini-pro-vision": "2023-12",
 };
 
 export const DEFAULT_TTS_ENGINE = "OpenAI-TTS";
@@ -291,120 +291,135 @@ export const DEFAULT_TTS_VOICES = [
   "shimmer",
 ];
 
-const openaiModels = [
-  "gpt-3.5-turbo",
-  "gpt-3.5-turbo-1106",
-  "gpt-3.5-turbo-0125",
-  "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
-  "gpt-4-turbo",
-  "gpt-4-turbo-preview",
-  "gpt-4o",
-  "gpt-4o-2024-05-13",
-  "gpt-4o-2024-08-06",
+const openaiModels: string[] = [
+  // "gpt-3.5-turbo",
+  // "gpt-3.5-turbo-1106",
+  // "gpt-3.5-turbo-0125",
+  // "gpt-4",
+  // "gpt-4-0613",
+  // "gpt-4-32k",
+  // "gpt-4-32k-0613",
+  // "gpt-4-turbo",
+  // "gpt-4-turbo-preview",
+  // "gpt-4o",
+  // "gpt-4o-2024-05-13",
+  // "gpt-4o-2024-08-06",
+  // "gpt-4o-2024-11-20",
+  // "chatgpt-4o-latest",
+  // "gpt-4o-mini",
+  // "gpt-4o-mini-2024-07-18",
+  // "gpt-4-vision-preview",
+  // "gpt-4-turbo-2024-04-09",
+  // "gpt-4-1106-preview",
+  // "dall-e-3",
+  // "o1-mini",
+  // "o1-preview",
+  "o1-preview-2024-09-12",
+  "o1-mini-2024-09-12",
   "gpt-4o-2024-11-20",
-  "chatgpt-4o-latest",
-  "gpt-4o-mini",
   "gpt-4o-mini-2024-07-18",
-  "gpt-4-vision-preview",
-  "gpt-4-turbo-2024-04-09",
-  "gpt-4-1106-preview",
-  "dall-e-3",
-  "o1-mini",
-  "o1-preview",
-];
-
-const googleModels = [
-  "gemini-1.0-pro",
-  "gemini-1.5-pro-latest",
-  "gemini-1.5-flash-latest",
-  "gemini-exp-1114",
-  "gemini-exp-1121",
-  "learnlm-1.5-pro-experimental",
-  "gemini-pro-vision",
-];
-
-const anthropicModels = [
-  "claude-instant-1.2",
-  "claude-2.0",
-  "claude-2.1",
-  "claude-3-sonnet-20240229",
-  "claude-3-opus-20240229",
-  "claude-3-opus-latest",
-  "claude-3-haiku-20240307",
-  "claude-3-5-haiku-20241022",
-  "claude-3-5-haiku-latest",
-  "claude-3-5-sonnet-20240620",
+  "o1-all",
+  "o1-pro-all",
   "claude-3-5-sonnet-20241022",
-  "claude-3-5-sonnet-latest",
+  "claude-3-5-sonnet-20240620",
+  "grok-beta",
+  "gemini-exp-1206",
 ];
 
-const baiduModels = [
-  "ernie-4.0-turbo-8k",
-  "ernie-4.0-8k",
-  "ernie-4.0-8k-preview",
-  "ernie-4.0-8k-preview-0518",
-  "ernie-4.0-8k-latest",
-  "ernie-3.5-8k",
-  "ernie-3.5-8k-0205",
-  "ernie-speed-128k",
-  "ernie-speed-8k",
-  "ernie-lite-8k",
-  "ernie-tiny-8k",
+const googleModels: string[] = [
+  // "gemini-1.0-pro",
+  // "gemini-1.5-pro-latest",
+  // "gemini-1.5-flash-latest",
+  // "gemini-exp-1114",
+  // "gemini-exp-1121",
+  // "learnlm-1.5-pro-experimental",
+  // "gemini-pro-vision",
+  "gemini-1.5-pro-002",
+  "gemini-exp-1206",
+  "gemini-2.0-flash-exp",
 ];
 
-const bytedanceModels = [
-  "Doubao-lite-4k",
-  "Doubao-lite-32k",
-  "Doubao-lite-128k",
-  "Doubao-pro-4k",
-  "Doubao-pro-32k",
-  "Doubao-pro-128k",
+const anthropicModels: string[] = [
+  // "claude-instant-1.2",
+  // "claude-2.0",
+  // "claude-2.1",
+  // "claude-3-sonnet-20240229",
+  // "claude-3-opus-20240229",
+  // "claude-3-opus-latest",
+  // "claude-3-haiku-20240307",
+  // "claude-3-5-haiku-20241022",
+  // "claude-3-5-haiku-latest",
+  // "claude-3-5-sonnet-20240620",
+  // "claude-3-5-sonnet-20241022",
+  // "claude-3-5-sonnet-latest",
 ];
 
-const alibabaModes = [
-  "qwen-turbo",
-  "qwen-plus",
-  "qwen-max",
-  "qwen-max-0428",
-  "qwen-max-0403",
-  "qwen-max-0107",
-  "qwen-max-longcontext",
+const baiduModels: string[] = [
+  // "ernie-4.0-turbo-8k",
+  // "ernie-4.0-8k",
+  // "ernie-4.0-8k-preview",
+  // "ernie-4.0-8k-preview-0518",
+  // "ernie-4.0-8k-latest",
+  // "ernie-3.5-8k",
+  // "ernie-3.5-8k-0205",
+  // "ernie-speed-128k",
+  // "ernie-speed-8k",
+  // "ernie-lite-8k",
+  // "ernie-tiny-8k",
 ];
 
-const tencentModels = [
-  "hunyuan-pro",
-  "hunyuan-standard",
-  "hunyuan-lite",
-  "hunyuan-role",
-  "hunyuan-functioncall",
-  "hunyuan-code",
-  "hunyuan-vision",
+const bytedanceModels: string[] = [
+  // "Doubao-lite-4k",
+  // "Doubao-lite-32k",
+  // "Doubao-lite-128k",
+  // "Doubao-pro-4k",
+  // "Doubao-pro-32k",
+  // "Doubao-pro-128k",
 ];
 
-const moonshotModes = ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"];
-
-const iflytekModels = [
-  "general",
-  "generalv3",
-  "pro-128k",
-  "generalv3.5",
-  "4.0Ultra",
+const alibabaModes: string[] = [
+  // "qwen-turbo",
+  // "qwen-plus",
+  // "qwen-max",
+  // "qwen-max-0428",
+  // "qwen-max-0403",
+  // "qwen-max-0107",
+  // "qwen-max-longcontext",
 ];
 
-const xAIModes = ["grok-beta"];
+const tencentModels: string[] = [
+  // "hunyuan-pro",
+  // "hunyuan-standard",
+  // "hunyuan-lite",
+  // "hunyuan-role",
+  // "hunyuan-functioncall",
+  // "hunyuan-code",
+  // "hunyuan-vision",
+];
 
-const chatglmModels = [
-  "glm-4-plus",
-  "glm-4-0520",
-  "glm-4",
-  "glm-4-air",
-  "glm-4-airx",
-  "glm-4-long",
-  "glm-4-flashx",
-  "glm-4-flash",
+const moonshotModes: string[] = [
+  /*"moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"*/
+];
+
+const iflytekModels: string[] = [
+  // "general",
+  // "generalv3",
+  // "pro-128k",
+  // "generalv3.5",
+  // "4.0Ultra",
+];
+
+const xAIModes: string[] = ["grok-beta"];
+
+const chatglmModels: string[] = [
+  // "glm-4-plus",
+  // "glm-4-0520",
+  // "glm-4",
+  // "glm-4-air",
+  // "glm-4-airx",
+  // "glm-4-long",
+  // "glm-4-flashx",
+  // "glm-4-flash",
 ];
 
 let seq = 1000; // 内置的模型序号生成器从1000开始
@@ -420,17 +435,17 @@ export const DEFAULT_MODELS = [
       sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  ...openaiModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
-      sorted: 2,
-    },
-  })),
+  // ...openaiModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "azure",
+  //     providerName: "Azure",
+  //     providerType: "azure",
+  //     sorted: 2,
+  //   },
+  // })),
   ...googleModels.map((name) => ({
     name,
     available: true,
