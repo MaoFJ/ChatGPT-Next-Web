@@ -290,6 +290,20 @@ export const DEFAULT_TTS_VOICES = [
   "nova",
   "shimmer",
 ];
+export const VISION_MODEL_REGEXES = [
+  /vision/,
+  /gpt-4o/,
+  /claude-3/,
+  /gemini-1\.5/,
+  /gemini-exp/,
+  /gemini-2\.0/,
+  /learnlm/,
+  /qwen-vl/,
+  /qwen2-vl/,
+  /gpt-4-turbo(?!.*preview)/, // Matches "gpt-4-turbo" but not "gpt-4-turbo-preview"
+  /^dall-e-3$/, // Matches exactly "dall-e-3"
+];
+export const EXCLUDE_VISION_MODEL_REGEXES = [/claude-3-5-haiku-20241022/];
 
 const openaiModels: string[] = [
   // "gpt-3.5-turbo",
@@ -320,10 +334,15 @@ const openaiModels: string[] = [
   "gpt-4o-mini-2024-07-18",
   "o1-all",
   "o1-pro-all",
+
   "claude-3-5-sonnet-20241022",
   "claude-3-5-sonnet-20240620",
+
   "grok-beta",
+
+  "gemini-1.5-pro-002",
   "gemini-exp-1206",
+  "gemini-2.0-flash-exp",
   "gemini-2.0-flash-thinking-exp-1219",
 ];
 
