@@ -67,7 +67,7 @@ export class GeminiProApi implements LLMApi {
       return parts
         .map((part) => part?.text || "")
         .filter((text) => text.trim() !== "")
-        .join("\n\n\n\n");
+        .join("\n\n---\n\n");
     };
 
     return (
@@ -237,7 +237,7 @@ export class GeminiProApi implements LLMApi {
             return chunkJson?.candidates
               ?.at(0)
               ?.content.parts?.map((part: { text: string }) => part.text)
-              .join("\n\n\n\n");
+              .join("\n\n---\n\n");
           },
           // processToolMessage, include tool_calls message and tool call results
           (
