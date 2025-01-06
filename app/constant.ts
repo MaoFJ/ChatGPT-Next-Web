@@ -430,7 +430,7 @@ const iflytekModels: string[] = [
   // "4.0Ultra",
 ];
 
-const xAIModes: string[] = ["grok-beta"];
+const xAIModes: string[] = ["grok-beta", "grok-2-latest"];
 
 const chatglmModels: string[] = [
   // "glm-4-plus",
