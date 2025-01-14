@@ -241,11 +241,11 @@ export class GeminiProApi implements LLMApi {
               .join("\n\n---\n\n");
             response_content = response_content.replace(
               /<sub>(.*?)<\/sub>/g,
-              "~$1~",
+              "$1",
             );
             response_content = response_content.replace(
               /<sup>(.*?)<\/sup>/g,
-              "^$1^",
+              "$1",
             );
             return response_content;
           },

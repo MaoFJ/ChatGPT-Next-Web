@@ -327,7 +327,17 @@ export class ChatGPTApi implements LLMApi {
                 runTools[index]["function"]["arguments"] += args;
               }
             }
-            return choices[0]?.delta?.content;
+            // 谷歌模型日常输出<sub>标签来指代上下标，转译成md形式
+            let response_content = choices[0]?.delta?.content;
+            response_content = response_content.replace(
+              /<sub>(.*?)<\/sub>/g,
+              "$1",
+            );
+            response_content = response_content.replace(
+              /<sup>(.*?)<\/sup>/g,
+              "$1",
+            );
+            return response_content;
           },
           // processToolMessage, include tool_calls message and tool call results
           (
