@@ -124,7 +124,6 @@ import { isEmpty } from "lodash-es";
 import { getModelProvider } from "../utils/model";
 import { RealtimeChat } from "@/app/components/realtime-chat";
 import clsx from "clsx";
-import { getAvailableClientsCount, isMcpEnabled } from "../mcp/actions";
 
 const localStorage = safeLocalStorage();
 
@@ -139,17 +138,7 @@ const MCPAction = () => {
   const [count, setCount] = useState<number>(0);
   const [mcpEnabled, setMcpEnabled] = useState(false);
 
-  useEffect(() => {
-    const checkMcpStatus = async () => {
-      const enabled = await isMcpEnabled();
-      setMcpEnabled(enabled);
-      if (enabled) {
-        const count = await getAvailableClientsCount();
-        setCount(count);
-      }
-    };
-    checkMcpStatus();
-  }, []);
+  useEffect(() => {}, []);
 
   if (!mcpEnabled) return null;
 
