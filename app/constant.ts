@@ -474,13 +474,14 @@ const openaiModels: string[] = [
   "gpt-4o-mini-2024-07-18",
   "o1-all",
   "o1-pro-all",
+  "o3-mini-all",
+  "o3-mini-high-all",
 
   "claude-3-5-sonnet-20241022",
   "claude-3-5-sonnet-20240620",
 
-  "grok-beta",
+  "grok-2-1212",
 
-  "gemini-1.5-pro-002",
   "gemini-exp-1206",
   "gemini-2.0-flash-exp",
   "gemini-2.0-flash-thinking-exp-01-21",
@@ -494,7 +495,8 @@ const googleModels: string[] = [
   // "gemini-exp-1121",
   // "learnlm-1.5-pro-experimental",
   // "gemini-pro-vision",
-  "gemini-1.5-pro-002",
+  // "gemini-1.5-pro-002",
+
   "gemini-exp-1206",
   "gemini-2.0-flash-exp",
   "gemini-2.0-flash-thinking-exp-01-21",
@@ -561,7 +563,11 @@ const tencentModels: string[] = [
 const moonshotModes: string[] = [
   /*"moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"*/
 ];
-const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"];
+const deepseekModels = [
+  // "deepseek-chat",
+  // "deepseek-coder",
+  // "deepseek-reasoner"
+];
 
 const iflytekModels: string[] = [
   // "general",
