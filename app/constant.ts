@@ -482,9 +482,9 @@ const openaiModels: string[] = [
 
   "grok-2-1212",
 
-  "gemini-exp-1206",
-  "gemini-2.0-flash-exp",
+  "gemini-2.0-flash",
   "gemini-2.0-flash-thinking-exp-01-21",
+  "gemini-2.0-pro-exp-02-05",
 ];
 
 const googleModels: string[] = [
@@ -497,9 +497,9 @@ const googleModels: string[] = [
   // "gemini-pro-vision",
   // "gemini-1.5-pro-002",
 
-  "gemini-exp-1206",
-  "gemini-2.0-flash-exp",
+  "gemini-2.0-flash",
   "gemini-2.0-flash-thinking-exp-01-21",
+  "gemini-2.0-pro-exp-02-05",
 ];
 
 const anthropicModels: string[] = [
