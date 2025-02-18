@@ -34,6 +34,8 @@ export const XAI_BASE_URL = "https://api.x.ai";
 
 export const CHATGLM_BASE_URL = "https://open.bigmodel.cn";
 
+export const SILICONFLOW_BASE_URL = "https://api.siliconflow.cn";
+
 export const CACHE_URL_PREFIX = "/api/cache";
 export const UPLOAD_URL = `${CACHE_URL_PREFIX}/upload`;
 
@@ -69,6 +71,7 @@ export enum ApiPath {
   XAI = "/api/xai",
   ChatGLM = "/api/chatglm",
   DeepSeek = "/api/deepseek",
+  SiliconFlow = "/api/siliconflow",
 }
 
 export enum SlotID {
@@ -107,6 +110,7 @@ export const UNFINISHED_INPUT = (id: string) => "unfinished-input-" + id;
 export const STORAGE_KEY = "chatgpt-next-web";
 
 export const REQUEST_TIMEOUT_MS = 60000;
+export const REQUEST_TIMEOUT_MS_FOR_THINKING = REQUEST_TIMEOUT_MS * 5;
 
 export const EXPORT_MESSAGE_CLASS_NAME = "export-markdown";
 
@@ -125,6 +129,7 @@ export enum ServiceProvider {
   XAI = "XAI",
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
+  SiliconFlow = "SiliconFlow",
 }
 
 // Google API safety settings, see https://ai.google.dev/gemini-api/docs/safety-settings
@@ -150,6 +155,7 @@ export enum ModelProvider {
   XAI = "XAI",
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
+  SiliconFlow = "SiliconFlow",
 }
 
 export const Stability = {
@@ -247,6 +253,12 @@ export const ChatGLM = {
   ChatPath: "api/paas/v4/chat/completions",
   ImagePath: "api/paas/v4/images/generations",
   VideoPath: "api/paas/v4/videos/generations",
+};
+
+export const SiliconFlow = {
+  ExampleEndpoint: SILICONFLOW_BASE_URL,
+  ChatPath: "v1/chat/completions",
+  ListModelPath: "v1/models?&sub_type=chat",
 };
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
@@ -442,10 +454,13 @@ export const VISION_MODEL_REGEXES = [
   /gpt-4-turbo(?!.*preview)/, // Matches "gpt-4-turbo" but not "gpt-4-turbo-preview"
   /^dall-e-3$/, // Matches exactly "dall-e-3"
   /glm-4v/,
+  /vl/i,
 ];
 export const EXCLUDE_VISION_MODEL_REGEXES = [/claude-3-5-haiku-20241022/];
 
-const openaiModels: string[] = [
+const openaiModels = [
+  // As of July 2024, gpt-4o-mini should be used in place of gpt-3.5-turbo,
+  // as it is cheaper, more capable, multimodal, and just as fast. gpt-3.5-turbo is still available for use in the API.
   // "gpt-3.5-turbo",
   // "gpt-3.5-turbo-1106",
   // "gpt-3.5-turbo-0125",
@@ -458,20 +473,7 @@ const openaiModels: string[] = [
   // "gpt-4o",
   // "gpt-4o-2024-05-13",
   // "gpt-4o-2024-08-06",
-  // "gpt-4o-2024-11-20",
-  // "chatgpt-4o-latest",
-  // "gpt-4o-mini",
-  // "gpt-4o-mini-2024-07-18",
-  // "gpt-4-vision-preview",
-  // "gpt-4-turbo-2024-04-09",
-  // "gpt-4-1106-preview",
-  // "dall-e-3",
-  // "o1-mini",
-  // "o1-preview",
-  "o1-preview-2024-09-12",
-  "o1-mini-2024-09-12",
-  "gpt-4o-2024-11-20",
-  "gpt-4o-mini-2024-07-18",
+
   "o1-all",
   "o1-pro-all",
   "o3-mini-all",
@@ -588,6 +590,23 @@ const chatglmModels: string[] = [
   // "glm-4-long",
   // "glm-4-flashx",
   // "glm-4-flash",
+];
+
+const siliconflowModels: string[] = [
+  // "Qwen/Qwen2.5-7B-Instruct",
+  // "Qwen/Qwen2.5-72B-Instruct",
+  // "deepseek-ai/DeepSeek-R1",
+  // "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+  // "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+  // "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  // "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+  // "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+  // "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  // "deepseek-ai/DeepSeek-V3",
+  // "meta-llama/Llama-3.3-70B-Instruct",
+  // "THUDM/glm-4-9b-chat",
+  // "Pro/deepseek-ai/DeepSeek-R1",
+  // "Pro/deepseek-ai/DeepSeek-V3",
 ];
 
 let seq = 1000; // 内置的模型序号生成器从1000开始
@@ -755,5 +774,5 @@ export const internalAllowedWebDavEndpoints = [
 
 export const DEFAULT_GA_ID = "G-89WN60ZK2E";
 
-export const SAAS_CHAT_URL = "https://nextchat.dev/chat";
-export const SAAS_CHAT_UTM_URL = "https://nextchat.dev/chat?utm=github";
+export const SAAS_CHAT_URL = "https://nextchat.club";
+export const SAAS_CHAT_UTM_URL = "https://nextchat.club?utm=github";
