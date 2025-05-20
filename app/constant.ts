@@ -474,19 +474,18 @@ const openaiModels = [
   // "gpt-4o-2024-05-13",
   // "gpt-4o-2024-08-06",
 
-  "o1-all",
-  "o1-pro-all",
-  "o3-mini-all",
-  "o3-mini-high-all",
+  "gpt-4.1-2025-04-14",
+  "o4-mini-2025-04-16",
+  "o3-2025-04-16",
+  "gpt-4.5-preview-2025-02-27",
 
-  "claude-3-5-sonnet-20241022",
-  "claude-3-5-sonnet-20240620",
+  "claude-3-7-sonnet-20250219",
+  "claude-3-7-sonnet-20250219-thinking",
 
-  "grok-2-1212",
+  "grok-3-reasoning",
 
-  "gemini-2.0-flash",
-  "gemini-2.0-flash-thinking-exp-01-21",
-  "gemini-2.0-pro-exp-02-05",
+  "gemini-2.5-flash-preview-04-17",
+  "gemini-2.5-pro-preview-05-06",
 ];
 
 const googleModels: string[] = [
@@ -499,9 +498,12 @@ const googleModels: string[] = [
   // "gemini-pro-vision",
   // "gemini-1.5-pro-002",
 
-  "gemini-2.0-flash",
-  "gemini-2.0-flash-thinking-exp-01-21",
-  "gemini-2.0-pro-exp-02-05",
+  // "gemini-2.0-flash",
+  // "gemini-2.0-flash-thinking-exp-01-21",
+  // "gemini-2.0-pro-exp-02-05",
+
+  "gemini-2.5-flash-preview-04-17",
+  "gemini-2.5-pro-preview-05-06",
 ];
 
 const anthropicModels: string[] = [
