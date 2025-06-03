@@ -221,7 +221,12 @@ export const ByteDance = {
 
 export const Alibaba = {
   ExampleEndpoint: ALIBABA_BASE_URL,
-  ChatPath: "v1/services/aigc/text-generation/generation",
+  ChatPath: (modelName: string) => {
+    if (modelName.includes("vl") || modelName.includes("omni")) {
+      return "v1/services/aigc/multimodal-generation/generation";
+    }
+    return `v1/services/aigc/text-generation/generation`;
+  },
 };
 
 export const Tencent = {
@@ -444,6 +449,7 @@ export const DEFAULT_TTS_VOICES = [
 export const VISION_MODEL_REGEXES = [
   /vision/,
   /gpt-4o/,
+  /gpt-4\.1/,
   /claude-3/,
   /gemini-1\.5/,
   /gemini-exp/,
@@ -455,6 +461,8 @@ export const VISION_MODEL_REGEXES = [
   /^dall-e-3$/, // Matches exactly "dall-e-3"
   /glm-4v/,
   /vl/i,
+  /o3/,
+  /o4-mini/,
 ];
 export const EXCLUDE_VISION_MODEL_REGEXES = [/claude-3-5-haiku-20241022/];
 
@@ -473,6 +481,13 @@ const openaiModels = [
   // "gpt-4o",
   // "gpt-4o-2024-05-13",
   // "gpt-4o-2024-08-06",
+  "gpt-4.1-mini-2025-04-14",
+  "gpt-4.1-nano",
+  "gpt-4.1-nano-2025-04-14",
+  "gpt-4.5-preview",
+  "gpt-4.5-preview-2025-02-27",
+  "o3",
+  "o4-mini",
 
   "gpt-4.1-2025-04-14",
   "o4-mini-2025-04-16",
@@ -486,6 +501,8 @@ const openaiModels = [
 
   "gemini-2.5-flash-preview-04-17",
   "gemini-2.5-pro-preview-05-06",
+  "claude-3-7-sonnet-20250219",
+  "claude-3-7-sonnet-latest",
 ];
 
 const googleModels: string[] = [
