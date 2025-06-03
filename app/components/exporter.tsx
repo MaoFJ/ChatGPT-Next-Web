@@ -180,6 +180,7 @@ export function MessageExporter() {
     session.mask.context,
     selection,
   ]);
+
   function preview() {
     if (exportConfig.format === "text") {
       return (
@@ -195,6 +196,7 @@ export function MessageExporter() {
       );
     }
   }
+
   return (
     <>
       <Steps
@@ -451,7 +453,14 @@ export function ImagePreviewer(props: {
     const isApp = getClientConfig()?.isApp;
 
     try {
-      const blob = await toPng(dom);
+      const targetPpi = 300;
+      const nominalScreenPpi = 96;
+      const calculatedPixelRatio = targetPpi / nominalScreenPpi;
+
+      const blob = await toPng(dom, {
+        quality: 1,
+        pixelRatio: calculatedPixelRatio,
+      });
       if (!blob) return;
 
       if (isMobile || (isApp && window.__TAURI__)) {
