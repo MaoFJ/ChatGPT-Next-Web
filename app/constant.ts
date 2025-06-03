@@ -494,8 +494,10 @@ const openaiModels = [
   "o3-2025-04-16",
   "gpt-4.5-preview-2025-02-27",
 
-  "claude-3-7-sonnet-20250219",
-  "claude-3-7-sonnet-20250219-thinking",
+  "claude-sonnet-4-20250514",
+  "claude-sonnet-4-20250514-thinking",
+  "claude-opus-4-20250514",
+  "claude-opus-4-20250514-thinking",
 
   "grok-3-reasoning",
 
