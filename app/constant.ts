@@ -502,6 +502,7 @@ const openaiModels = [
   "grok-3-reasoning",
 
   "gemini-2.5-flash",
+  "gemini-2.5-flash-vision",
   "gemini-2.5-pro",
   "claude-3-7-sonnet-20250219",
   "claude-3-7-sonnet-latest",
@@ -522,6 +523,7 @@ const googleModels: string[] = [
   // "gemini-2.0-pro-exp-02-05",
 
   "gemini-2.5-flash",
+  "gemini-2.5-flash-vision",
   "gemini-2.5-pro",
 ];
 
